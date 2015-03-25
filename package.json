@@ -1,0 +1,24 @@
+{
+  "name": "gridable",
+  "version": "1.0.0",
+  "description": "Automatic CSS grid generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "keywords": [
+    "CSS",
+    "OOCSS",
+    "grid",
+    "layout"
+  ],
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "devDependencies": {
+    "cssnext": "^1.1.0",
+    "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "lodash": "^3.6.0"
+  }
+}

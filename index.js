@@ -3,13 +3,18 @@ var _ = require('lodash');
 var postcss = require('postcss');
 var pkg = require('./package.json');
 
-var createContainer = require('./lib/create-container');
-var createRow = require('./lib/create-row');
-var createColumns = require('./lib/create-columns');
-var createCustomProperties = require('./lib/create-custom-properties');
-var createCustomMedia = require('./lib/create-custom-media');
-//var createOffsets = require('./lib/create-offsets');
-//var createColumnRights = require('./lib/create-column-rights');
+var createContainer = require('./lib/container');
+var createRow = require('./lib/row');
+var createColumns = require('./lib/columns');
+var createCustomProperties = require('./lib/custom-properties');
+var createCustomMedia = require('./lib/custom-media');
+var createOffsets = require('./lib/offsets');
+//var createColumnRights = require('./lib/column-rights');
+//
+// Bootstrap
+// push/pull (left/right)
+// position: relative
+// min-height: 1px
 
 
 module.exports = function(options) {
@@ -22,21 +27,22 @@ module.exports = function(options) {
     customMedia: true,
     customProperties: true,
     breakpoints: [
+      {},
       { name: 'sm', value: '(min-width: 40em)' },
       { name: 'md', value: '(min-width: 52em)' },
       { name: 'lg', value: '(min-width: 64em)' }
     ],
     method: 'float',
     combinedColumns: true,
-    modifiers: {
-      offset: false,
-      right: false,
-      center: false,
-    },
+    offsets: false,
+    //modifiers: {
+    //  right: false,
+    //  center: false,
+    //},
     classNames: {
       container: 'container',
       row: 'row',
-      column: 'BB-col-NN',
+      column: 'BB-col-NN-MM',
     }
   });
 
@@ -58,10 +64,10 @@ module.exports = function(options) {
   root.append(createCustomMedia(options));
   root.append(createCustomProperties(options));
   root.append(createColumns(options));
+  root.append(createOffsets(options));
+  // offsets
+  // center extension
 
-  //var css = [
-  //  createColumns(options),
-  //].join('\n\n');
 
   return root.toResult().css;
 

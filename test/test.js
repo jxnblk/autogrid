@@ -1,4 +1,6 @@
 
+var fs = require('fs');
+var path = require('path');
 var assert = require('assert');
 var gridable = require('..');
 var cssnext = require('cssnext');
@@ -9,8 +11,30 @@ var css3 = gridable({
   customProperties: false
 });
 
-console.log(css4);
-//console.log(css3);
+var bootstrap = gridable({
+  customMedia: false,
+  customProperties: false,
+  container: '1170px',
+  gutter: '15px',
+  offsets: true,
+  breakpoints: [
+    { name: 'xs' },
+    { name: 'sm', value: '(min-width: 768px)' },
+    { name: 'md', value: '(min-width: 992px)' },
+    { name: 'lg', value: '(min-width: 1200px)' },
+  ],
+  classNames: {
+    container: 'container',
+    row: 'row',
+    column: 'col-BB-MM-NN'
+  }
+});
+
+fs.writeFileSync(path.join(__dirname, './results/css3.css'), css3);
+fs.writeFileSync(path.join(__dirname, './results/css4.css'), css4);
+fs.writeFileSync(path.join(__dirname, './results/bootstrap.css'), bootstrap);
+
+console.log(bootstrap);
 
 describe('gridable', function() {
 

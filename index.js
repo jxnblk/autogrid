@@ -1,5 +1,6 @@
 
 var _ = require('lodash');
+var postcss = require('postcss');
 var pkg = require('./package.json');
 
 var createContainer = require('./lib/create-container');
@@ -7,6 +8,9 @@ var createRow = require('./lib/create-row');
 var createColumns = require('./lib/create-columns');
 var createCustomProperties = require('./lib/create-custom-properties');
 var createCustomMedia = require('./lib/create-custom-media');
+//var createOffsets = require('./lib/create-offsets');
+//var createColumnRights = require('./lib/create-column-rights');
+
 
 module.exports = function(options) {
 
@@ -36,10 +40,7 @@ module.exports = function(options) {
     }
   });
 
-  function createOffsets() { }
-  function createColumnRights() { }
-  function createCustomMedia() { }
-
+  var root = postcss.root({ after: '\n' });
 
   var header = [
     '/*',
@@ -47,19 +48,26 @@ module.exports = function(options) {
     '  Gridable',
     '  v' + pkg.version,
     '',
-    '*/'
+    '*/\n'
   ].join('\n');
 
-  var css = [
-    header,
-    createContainer(options),
-    createRow(options),
-    createColumns(options),
-    createCustomProperties(options),
-    createCustomMedia(options),
-  ].join('\n\n');
+  root.nodes.push(postcss.parse(header));
 
-  return css;
+  root.append(createContainer(options));
+  root.append(createRow(options));
+  root.append(createCustomMedia(options));
+  root.append(createCustomProperties(options));
+
+  //var css = [
+  //  header,
+  //  createContainer(options),
+  //  createRow(options),
+  //  createColumns(options),
+  //  createCustomProperties(options),
+  //  createCustomMedia(options),
+  //].join('\n\n');
+
+  return root.toResult().css;
 
 };
 

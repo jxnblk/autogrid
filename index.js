@@ -57,14 +57,10 @@ module.exports = function(options) {
   root.append(createRow(options));
   root.append(createCustomMedia(options));
   root.append(createCustomProperties(options));
+  root.append(createColumns(options));
 
   //var css = [
-  //  header,
-  //  createContainer(options),
-  //  createRow(options),
   //  createColumns(options),
-  //  createCustomProperties(options),
-  //  createCustomMedia(options),
   //].join('\n\n');
 
   return root.toResult().css;

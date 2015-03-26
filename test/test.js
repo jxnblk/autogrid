@@ -32,6 +32,7 @@ var bootstrap = autogrid({
     { name: 'md', value: '(min-width: 992px)' },
     { name: 'lg', value: '(min-width: 1200px)' },
   ],
+  //prefix: 'bs-',
   containerName: 'container',
   rowName: 'row',
   columnName: 'col-BB-MM-NN',

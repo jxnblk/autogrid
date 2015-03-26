@@ -42,6 +42,7 @@ module.exports = function(options) {
     // center: false,
     // push: false,
     // pull: false,
+    prefix: '',
     containerName: 'container',
     rowName: 'row',
     columnName: 'BB-col-NN-MM',

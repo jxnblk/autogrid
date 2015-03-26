@@ -21,14 +21,6 @@
 .row:after {
   clear: both
 }
-@custom-media --breakpoint-undefined undefined;
-@custom-media --breakpoint-sm (min-width: 40em);
-@custom-media --breakpoint-md (min-width: 52em);
-@custom-media --breakpoint-lg (min-width: 64em);
-:root {
-  --container-width: 1024px;
-  --gutter-width: 32px
-}
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .sm-col-1, .sm-col-2, .sm-col-3, .sm-col-4, .sm-col-5, .sm-col-6, .sm-col-7, .sm-col-8, .sm-col-9, .sm-col-10, .sm-col-11, .sm-col-12, .md-col-1, .md-col-2, .md-col-3, .md-col-4, .md-col-5, .md-col-6, .md-col-7, .md-col-8, .md-col-9, .md-col-10, .md-col-11, .md-col-12, .lg-col-1, .lg-col-2, .lg-col-3, .lg-col-4, .lg-col-5, .lg-col-6, .lg-col-7, .lg-col-8, .lg-col-9, .lg-col-10, .lg-col-11, .lg-col-12 {
   box-sizing: border-box;
   padding-left: var(--gutter-width);
@@ -198,4 +190,11 @@
   .lg-col-12 {
     width: 100%
   }
+}
+@custom-media --breakpoint-sm (min-width: 40em);
+@custom-media --breakpoint-md (min-width: 52em);
+@custom-media --breakpoint-lg (min-width: 64em);
+:root {
+  --container-width: 1024px;
+  --gutter-width: 32px
 }

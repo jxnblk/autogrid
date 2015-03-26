@@ -10,6 +10,7 @@ var createCustomProperties = require('./lib/custom-properties');
 var createCustomMedia = require('./lib/custom-media');
 var createOffsets = require('./lib/offsets');
 //var createColumnRights = require('./lib/column-rights');
+//var optionsTypeCheck = require('./lib/options-type-check');
 //
 // Bootstrap
 // push/pull (left/right)
@@ -22,36 +23,41 @@ module.exports = function(options) {
   var options = options || {};
   options = _.defaults(options, {
     columns: 12,
-    gutter: '32px',
-    container: '1024px',
+    gutter: '32px', // Add support for false
+    container: '1024px', // or false
+    containerPadding: false, // or true or string 
+    row: true,
     customMedia: true,
     customProperties: true,
-    breakpoints: [
+    breakpoints: [ // Add support for false
       {},
       { name: 'sm', value: '(min-width: 40em)' },
       { name: 'md', value: '(min-width: 52em)' },
       { name: 'lg', value: '(min-width: 64em)' }
     ],
-    method: 'float',
-    combinedColumns: true,
-    offsets: false,
-    //modifiers: {
-    //  right: false,
-    //  center: false,
-    //},
-    classNames: {
-      container: 'container',
-      row: 'row',
-      column: 'BB-col-NN-MM',
-    }
+    method: 'float', // Add support for inline-block and flex
+    mixedColumns: false,
+    offset: false, // or true or string (for offset name)
+    // right: false,
+    // center: false,
+    // push: false,
+    // pull: false,
+    containerName: 'container',
+    rowName: 'row',
+    columnName: 'BB-col-NN-MM',
+    // Macros support (e.g. bootstrap, suitcss, inuitcss, foundation, etc)
   });
+
+  //if (!optionsTypeCheck(options)) {
+  //  return false;
+  //};
 
   var root = postcss.root({ after: '\n' });
 
   var header = [
     '/*',
     '',
-    '  Gridable',
+    '  autogrid',
     '  v' + pkg.version,
     '',
     '*/\n'
@@ -61,11 +67,10 @@ module.exports = function(options) {
 
   root.append(createContainer(options));
   root.append(createRow(options));
-  root.append(createCustomMedia(options));
-  root.append(createCustomProperties(options));
   root.append(createColumns(options));
   root.append(createOffsets(options));
-  // offsets
+  root.append(createCustomMedia(options));
+  root.append(createCustomProperties(options));
   // center extension
 
 

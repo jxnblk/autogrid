@@ -1,5 +1,5 @@
 {
-  "name": "gridable",
+  "name": "autogrid",
   "version": "1.0.0",
   "description": "Automatic CSS grid generator",
   "main": "index.js",

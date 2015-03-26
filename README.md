@@ -2,7 +2,6 @@
 
 Automatic CSS grid generator
 
-<!--
 ```bash
 npm install autogrid
 ```
@@ -18,7 +17,6 @@ var css = autogrid({
 fs.writeFileSync('grid.css', css);
 ```
 
--->
 
 ## Options
 

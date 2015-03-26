@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= name %></title>
+  <link rel="stylesheet" href="<%= stylesheet %>">
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    .p2 { padding: 2rem }
+    .demo-box {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      background-color: rgba(255,0,128, .0625);
+      box-shadow: inset 0 0 0 2px rgba(255,0,128,.125);
+    }
+  </style>
+</head>
+<body class="p2">
+
+  <header>
+    <h1><%= name %></h1>
+  </header>
+
+  <section id="widths">
+    <h1>
+      <a href="#widths"> widths </a>
+    </h1>
+    <div class="<%= container %>">
+      <% for (var i = 0; i < columns - 1; i++) {
+        var second = columns - 2 - i; %>
+        <div class="<%= row %>">
+          <div class="<%= col + ' ' + cols[i] %> demo-box">
+            <%= '.' + cols[i] %>
+          </div>
+          <div class="<%= col + ' ' + cols[second] %> demo-box">
+            <%= '.' + cols[second] %>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </section>
+
+
+</body>
+</html>

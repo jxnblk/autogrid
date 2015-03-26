@@ -1,0 +1,75 @@
+{
+  "selectors": 57,
+  "declarations": 76,
+  "properties": [
+    "maxWidth",
+    "marginLeft",
+    "marginRight",
+    "content",
+    "display",
+    "clear",
+    "float",
+    "boxSizing",
+    "paddingLeft",
+    "paddingRight",
+    "minHeight",
+    "width"
+  ],
+  "mediaQueries": [
+    "(minWidth:40em)",
+    "(minWidth:52em)",
+    "(minWidth:64em)"
+  ],
+  "maxWidth": {
+    "total": 1,
+    "unique": 1
+  },
+  "marginLeft": {
+    "total": 2,
+    "unique": 2
+  },
+  "marginRight": {
+    "total": 2,
+    "unique": 2
+  },
+  "content": {
+    "total": 1,
+    "unique": 1
+  },
+  "display": {
+    "total": 1,
+    "unique": 1
+  },
+  "clear": {
+    "total": 1,
+    "unique": 1
+  },
+  "float": {
+    "total": 4,
+    "unique": 1
+  },
+  "boxSizing": {
+    "total": 4,
+    "unique": 1
+  },
+  "paddingLeft": {
+    "total": 4,
+    "unique": 1
+  },
+  "paddingRight": {
+    "total": 4,
+    "unique": 1
+  },
+  "minHeight": {
+    "total": 4,
+    "unique": 1
+  },
+  "width": {
+    "total": 48,
+    "unique": 12
+  },
+  "idSelectors": 0,
+  "classSelectors": 57,
+  "pseudoClassSelectors": 0,
+  "pseudoElementSelectors": 3
+}

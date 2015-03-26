@@ -9,6 +9,7 @@ var createColumns = require('./lib/columns');
 var createCustomProperties = require('./lib/custom-properties');
 var createCustomMedia = require('./lib/custom-media');
 var createOffsets = require('./lib/offsets');
+var createColumnFlush = require('./lib/column-flush');
 //var createColumnRights = require('./lib/column-rights');
 //var optionsTypeCheck = require('./lib/options-type-check');
 //
@@ -34,9 +35,11 @@ module.exports = function(options) {
       { name: 'lg', value: '(min-width: 64em)' }
     ],
     method: 'float', // Add support for inline-block and flex
+    fontSize: '1rem', // Used for inline-block method
     noCollapse: true,
     mixedColumns: false,
     offset: false, // or true or string (for offset name)
+    columnFlush: false, // Modifier to remove gutter per column
     // right: false,
     // center: false,
     // push: false,
@@ -45,6 +48,8 @@ module.exports = function(options) {
     containerName: 'container',
     rowName: 'row',
     columnName: 'BB-col-NN-MM',
+    header: '/*\n\n  autogrid\n  v' + pkg.version + '\n\n*/\n\n',
+
     // Macros support (e.g. bootstrap, suitcss, inuitcss, foundation, etc)
   });
 
@@ -54,21 +59,14 @@ module.exports = function(options) {
 
   var root = postcss.root({ after: '\n' });
 
-  var header = [
-    '/*',
-    '',
-    '  autogrid',
-    '  v' + pkg.version,
-    '',
-    '*/\n'
-  ].join('\n');
 
-  root.nodes.push(postcss.parse(header));
+  root.nodes.push(postcss.parse(options.header));
 
   root.append(createContainer(options));
   root.append(createRow(options));
   root.append(createColumns(options));
   root.append(createOffsets(options));
+  root.append(createColumnFlush(options));
   root.append(createCustomMedia(options));
   root.append(createCustomProperties(options));
   // center extension

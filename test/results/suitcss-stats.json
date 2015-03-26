@@ -1,0 +1,90 @@
+{
+  "selectors": 55,
+  "declarations": 98,
+  "properties": [
+    "marginLeft",
+    "marginRight",
+    "fontSize",
+    "textAlign",
+    "display",
+    "margin",
+    "padding",
+    "verticalAlign",
+    "width",
+    "boxSizing",
+    "paddingLeft",
+    "paddingRight",
+    "minHeight",
+    "containerWidth",
+    "gutterWidth"
+  ],
+  "mediaQueries": [
+    "(BreakpointSm)",
+    "(BreakpointMd)",
+    "(BreakpointLg)"
+  ],
+  "marginLeft": {
+    "total": 1,
+    "unique": 1
+  },
+  "marginRight": {
+    "total": 1,
+    "unique": 1
+  },
+  "fontSize": {
+    "total": 5,
+    "unique": 2
+  },
+  "textAlign": {
+    "total": 5,
+    "unique": 1
+  },
+  "display": {
+    "total": 4,
+    "unique": 1
+  },
+  "margin": {
+    "total": 4,
+    "unique": 1
+  },
+  "padding": {
+    "total": 4,
+    "unique": 1
+  },
+  "verticalAlign": {
+    "total": 4,
+    "unique": 1
+  },
+  "width": {
+    "total": 52,
+    "unique": 12
+  },
+  "boxSizing": {
+    "total": 4,
+    "unique": 1
+  },
+  "paddingLeft": {
+    "total": 4,
+    "unique": 1
+  },
+  "paddingRight": {
+    "total": 4,
+    "unique": 1
+  },
+  "minHeight": {
+    "total": 4,
+    "unique": 1
+  },
+  "containerWidth": {
+    "total": 1,
+    "unique": 1
+  },
+  "gutterWidth": {
+    "total": 1,
+    "unique": 1
+  },
+  "idSelectors": 0,
+  "classSelectors": 54,
+  "pseudoClassSelectors": 1,
+  "pseudoElementSelectors": 0
+}

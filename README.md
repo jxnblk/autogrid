@@ -115,11 +115,13 @@ Class name for row style.
 ### `columnName`
 default: BB-col-NN-MM
 Class name for columns and column modifiers, where BB is breakpoint.name, NN is column width number, and MM is modifier.
+Currently only supports hyphens as separators.
 
 ```js
 // Example
 options.columnName: 'col-BB-MM-NN'
 // Results in Bootstrap style naming convention
+// e.g. .col-sm-6, .col-sm-offset-3
 ```
 
 ---

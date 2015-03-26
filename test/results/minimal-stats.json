@@ -1,0 +1,51 @@
+{
+  "selectors": 14,
+  "declarations": 19,
+  "properties": [
+    "float",
+    "boxSizing",
+    "paddingLeft",
+    "paddingRight",
+    "minHeight",
+    "width",
+    "containerWidth",
+    "gutterWidth"
+  ],
+  "mediaQueries": [],
+  "float": {
+    "total": 1,
+    "unique": 1
+  },
+  "boxSizing": {
+    "total": 1,
+    "unique": 1
+  },
+  "paddingLeft": {
+    "total": 1,
+    "unique": 1
+  },
+  "paddingRight": {
+    "total": 1,
+    "unique": 1
+  },
+  "minHeight": {
+    "total": 1,
+    "unique": 1
+  },
+  "width": {
+    "total": 12,
+    "unique": 12
+  },
+  "containerWidth": {
+    "total": 1,
+    "unique": 1
+  },
+  "gutterWidth": {
+    "total": 1,
+    "unique": 1
+  },
+  "idSelectors": 0,
+  "classSelectors": 13,
+  "pseudoClassSelectors": 1,
+  "pseudoElementSelectors": 0
+}

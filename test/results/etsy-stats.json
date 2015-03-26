@@ -1,0 +1,82 @@
+{
+  "selectors": 293,
+  "declarations": 162,
+  "properties": [
+    "marginLeft",
+    "marginRight",
+    "content",
+    "display",
+    "clear",
+    "boxSizing",
+    "paddingLeft",
+    "paddingRight",
+    "minHeight",
+    "float",
+    "width",
+    "containerWidth",
+    "gutterWidth"
+  ],
+  "mediaQueries": [
+    "(BreakpointSm)",
+    "(BreakpointMd)",
+    "(BreakpointLg)",
+    "(BreakpointXl)",
+    "(BreakpointTv)"
+  ],
+  "marginLeft": {
+    "total": 67,
+    "unique": 12
+  },
+  "marginRight": {
+    "total": 1,
+    "unique": 1
+  },
+  "content": {
+    "total": 1,
+    "unique": 1
+  },
+  "display": {
+    "total": 1,
+    "unique": 1
+  },
+  "clear": {
+    "total": 1,
+    "unique": 1
+  },
+  "boxSizing": {
+    "total": 1,
+    "unique": 1
+  },
+  "paddingLeft": {
+    "total": 7,
+    "unique": 2
+  },
+  "paddingRight": {
+    "total": 7,
+    "unique": 2
+  },
+  "minHeight": {
+    "total": 1,
+    "unique": 1
+  },
+  "float": {
+    "total": 1,
+    "unique": 1
+  },
+  "width": {
+    "total": 72,
+    "unique": 12
+  },
+  "containerWidth": {
+    "total": 1,
+    "unique": 1
+  },
+  "gutterWidth": {
+    "total": 1,
+    "unique": 1
+  },
+  "idSelectors": 0,
+  "classSelectors": 286,
+  "pseudoClassSelectors": 1,
+  "pseudoElementSelectors": 3
+}

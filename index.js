@@ -13,9 +13,7 @@ var createOffsets = require('./lib/offsets');
 //var optionsTypeCheck = require('./lib/options-type-check');
 //
 // Bootstrap
-// push/pull (left/right)
-// position: relative
-// min-height: 1px
+// push/pull (left/right) & position: relative
 
 
 module.exports = function(options) {
@@ -36,6 +34,7 @@ module.exports = function(options) {
       { name: 'lg', value: '(min-width: 64em)' }
     ],
     method: 'float', // Add support for inline-block and flex
+    noCollapse: true,
     mixedColumns: false,
     offset: false, // or true or string (for offset name)
     // right: false,

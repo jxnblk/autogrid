@@ -9,7 +9,8 @@
   float: left;
   box-sizing: border-box;
   padding-left: var(--gutter-width);
-  padding-right: var(--gutter-width)
+  padding-right: var(--gutter-width);
+  min-height: 1px
 }
 .col-1 {
   width: 8.333333333333332%

@@ -25,14 +25,16 @@
   float: left;
   box-sizing: border-box;
   padding-left: var(--gutter-width);
-  padding-right: var(--gutter-width)
+  padding-right: var(--gutter-width);
+  min-height: 1px
 }
 @media (--breakpoint-sm) {
   .sm-col {
     float: left;
     box-sizing: border-box;
     padding-left: var(--gutter-width);
-    padding-right: var(--gutter-width)
+    padding-right: var(--gutter-width);
+    min-height: 1px
   }
 }
 @media (--breakpoint-md) {
@@ -40,7 +42,8 @@
     float: left;
     box-sizing: border-box;
     padding-left: var(--gutter-width);
-    padding-right: var(--gutter-width)
+    padding-right: var(--gutter-width);
+    min-height: 1px
   }
 }
 @media (--breakpoint-lg) {
@@ -48,7 +51,8 @@
     float: left;
     box-sizing: border-box;
     padding-left: var(--gutter-width);
-    padding-right: var(--gutter-width)
+    padding-right: var(--gutter-width);
+    min-height: 1px
   }
 }
 .col-1 {

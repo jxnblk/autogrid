@@ -1,15 +1,13 @@
 {
-  "selectors": 14,
-  "declarations": 19,
+  "selectors": 13,
+  "declarations": 17,
   "properties": [
     "float",
     "boxSizing",
     "paddingLeft",
     "paddingRight",
     "minHeight",
-    "width",
-    "containerWidth",
-    "gutterWidth"
+    "width"
   ],
   "mediaQueries": [],
   "float": {
@@ -36,16 +34,8 @@
     "total": 12,
     "unique": 12
   },
-  "containerWidth": {
-    "total": 1,
-    "unique": 1
-  },
-  "gutterWidth": {
-    "total": 1,
-    "unique": 1
-  },
   "idSelectors": 0,
   "classSelectors": 13,
-  "pseudoClassSelectors": 1,
+  "pseudoClassSelectors": 0,
   "pseudoElementSelectors": 0
 }

@@ -9,6 +9,8 @@ module.exports = {
     container: false,
     row: false,
     breakpoints: [{}],
+    customMedia: false,
+    customProperties: false
   },
   etsy: {
     gutter: '18px',
@@ -24,7 +26,9 @@ module.exports = {
       { name: 'xl', value: '(min-width: 1200px)' },
       { name: 'tv', value: '(min-width: 1600px)' },
     ],
-    columnName: 'col-MM-BB-NN'
+    columnName: 'col-MM-BB-NN',
+    customMedia: false,
+    customProperties: false
   },
   bootstrap: {
     customMedia: false,
@@ -50,5 +54,7 @@ module.exports = {
     rowName: 'Grid',
     columnName: 'Grid-cell-BB-NN',
     gutter: '20px',
+    customMedia: false,
+    customProperties: false
   },
 };

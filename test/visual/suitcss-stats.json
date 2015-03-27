@@ -1,6 +1,6 @@
 {
-  "selectors": 55,
-  "declarations": 98,
+  "selectors": 54,
+  "declarations": 96,
   "properties": [
     "marginLeft",
     "marginRight",
@@ -14,14 +14,12 @@
     "boxSizing",
     "paddingLeft",
     "paddingRight",
-    "minHeight",
-    "containerWidth",
-    "gutterWidth"
+    "minHeight"
   ],
   "mediaQueries": [
-    "(BreakpointSm)",
-    "(BreakpointMd)",
-    "(BreakpointLg)"
+    "(minWidth:40em)",
+    "(minWidth:52em)",
+    "(minWidth:64em)"
   ],
   "marginLeft": {
     "total": 1,
@@ -75,16 +73,8 @@
     "total": 4,
     "unique": 1
   },
-  "containerWidth": {
-    "total": 1,
-    "unique": 1
-  },
-  "gutterWidth": {
-    "total": 1,
-    "unique": 1
-  },
   "idSelectors": 0,
   "classSelectors": 54,
-  "pseudoClassSelectors": 1,
+  "pseudoClassSelectors": 0,
   "pseudoElementSelectors": 0
 }

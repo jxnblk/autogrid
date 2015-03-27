@@ -7,8 +7,8 @@
 
 
 .Grid {
-  margin-left: -var(--gutter-width);
-  margin-right: -var(--gutter-width)
+  margin-left: -20px;
+  margin-right: -20px
 
 }
 .Grid {
@@ -25,12 +25,12 @@
   vertical-align: top;
   width: 100%;
   box-sizing: border-box;
-  padding-left: var(--gutter-width);
-  padding-right: var(--gutter-width);
+  padding-left: 20px;
+  padding-right: 20px;
   min-height: 1px
 
 }
-@media (--breakpoint-sm) {
+@media (min-width: 40em) {
   .Grid-cell-sm {
     display: inline-block;
     font-size: 1rem;
@@ -40,14 +40,14 @@
     vertical-align: top;
     width: 100%;
     box-sizing: border-box;
-    padding-left: var(--gutter-width);
-    padding-right: var(--gutter-width);
+    padding-left: 20px;
+    padding-right: 20px;
     min-height: 1px
 
   }
 
 }
-@media (--breakpoint-md) {
+@media (min-width: 52em) {
   .Grid-cell-md {
     display: inline-block;
     font-size: 1rem;
@@ -57,14 +57,14 @@
     vertical-align: top;
     width: 100%;
     box-sizing: border-box;
-    padding-left: var(--gutter-width);
-    padding-right: var(--gutter-width);
+    padding-left: 20px;
+    padding-right: 20px;
     min-height: 1px
 
   }
 
 }
-@media (--breakpoint-lg) {
+@media (min-width: 64em) {
   .Grid-cell-lg {
     display: inline-block;
     font-size: 1rem;
@@ -74,8 +74,8 @@
     vertical-align: top;
     width: 100%;
     box-sizing: border-box;
-    padding-left: var(--gutter-width);
-    padding-right: var(--gutter-width);
+    padding-left: 20px;
+    padding-right: 20px;
     min-height: 1px
 
   }
@@ -129,7 +129,7 @@
   width: 100%
 
 }
-@media (--breakpoint-sm) {
+@media (min-width: 40em) {
   .Grid-cell-sm-1 {
     width: 8.333333333333332%
 
@@ -180,7 +180,7 @@
   }
 
 }
-@media (--breakpoint-md) {
+@media (min-width: 52em) {
   .Grid-cell-md-1 {
     width: 8.333333333333332%
 
@@ -231,7 +231,7 @@
   }
 
 }
-@media (--breakpoint-lg) {
+@media (min-width: 64em) {
   .Grid-cell-lg-1 {
     width: 8.333333333333332%
 
@@ -281,11 +281,4 @@
 
   }
 
-}
-@custom-media --breakpoint-sm (min-width: 40em);
-@custom-media --breakpoint-md (min-width: 52em);
-@custom-media --breakpoint-lg (min-width: 64em);
-:root {
-  --container-width: false;
-  --gutter-width: 20px
 }

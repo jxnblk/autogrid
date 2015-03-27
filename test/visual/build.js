@@ -44,6 +44,8 @@ Object.keys(options).forEach(function(key) {
   for (var i = 0; i < opts.columns; i++) {
     data.cols.push( columnSelector(opts, opts.breakpoints[0].name, i+1, false).replace(/^\./,'') );
   }
+  var flushName = (typeof opts.columnFlush === 'string') ? opts.columnFlush : 'flush';
+  data.colFlush = columnSelector(opts, opts.breakpoints[0].name, false, flushName).replace(/^\./,'');
 
   var html = tpl(data);
 

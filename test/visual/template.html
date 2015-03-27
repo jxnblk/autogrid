@@ -8,7 +8,10 @@
       font-family: sans-serif;
     }
     .p2 { padding: 2rem }
-    .demo-box {
+    .DemoBox {
+      box-shadow: inset 0 0 0 2px rgba(255,0,128,.125);
+    }
+    .DemoBox-inner {
       padding-top: 1rem;
       padding-bottom: 1rem;
       background-color: rgba(255,0,128, .0625);
@@ -24,23 +27,107 @@
 
   <section id="widths">
     <h1>
-      <a href="#widths"> widths </a>
+      <a href="#widths">widths</a>
     </h1>
     <div class="<%= container %>">
       <% for (var i = 0; i < columns - 1; i++) {
         var second = columns - 2 - i; %>
         <div class="<%= row %>">
-          <div class="<%= col + ' ' + cols[i] %> demo-box">
-            <%= '.' + cols[i] %>
+          <div class="<%= col + ' ' + cols[i] %> DemoBox">
+            <div class="DemoBox-inner">
+              <%= '.' + cols[i] %>
+            </div>
           </div>
-          <div class="<%= col + ' ' + cols[second] %> demo-box">
-            <%= '.' + cols[second] %>
+          <div class="<%= col + ' ' + cols[second] %> DemoBox">
+            <div class="DemoBox-inner">
+              <%= '.' + cols[second] %>
+            </div>
           </div>
         </div>
       <% } %>
     </div>
   </section>
 
+  <section id="wrapping">
+    <h1>
+      <a href="#wrapping">wrapping</a>
+    </h1>
+    <div class="<%= container %>">
+      <div class="<%= row %>">
+        <% for (var i = 0; i < 12; i++) { %>
+          <div class="<%= col + ' ' + cols[3] %> DemoBox">
+            <div class="DemoBox-inner">
+              <%= '.' + cols[3] %>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+  <section id="nesting">
+    <h1>
+      <a href="#nesting">nesting</a>
+    </h1>
+    <div class="<%= container %>">
+      <div class="<%= row %>">
+        <% for (var i = 0; i < 2; i++) { %>
+          <div class="<%= col + ' ' + cols[5] %> DemoBox">
+            <div class="DemoBox-inner">
+              <%= '.' + cols[5] %>
+              <div class="<%= row %>">
+                <% for (var j = 0; j < 2; j++) { %>
+                  <div class="<%= col + ' ' + cols[5] %> DemoBox">
+                    <div class="DemoBox-inner">
+                      <%= '.' + cols[5] %>
+                    </div>
+                  </div>
+                <% } %>
+              </div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="flush">
+    <h1>
+      <a href="#flush">flush</a>
+    </h1>
+    <div class="<%= container %>">
+      <div class="<%= row %>">
+        <% for (var i = 0; i < 4; i++) { %>
+          <div class="<%= col + ' ' + cols[2] %>
+            <%= i%2 ? colFlush : '' %>
+            DemoBox">
+            <div class="DemoBox-inner">
+              <%= '.' + cols[2] %>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+
+  <section id="heights">
+    <h1>
+      <a href="#heights">heights</a>
+    </h1>
+    <div class="<%= container %>">
+      <div class="<%= row %>">
+        <% for (var i = 0; i < 4; i++) { %>
+          <div class="<%= col + ' ' + cols[2] %> DemoBox">
+            <div class="DemoBox-inner">
+              <%= '.' + cols[2] %>
+              <%= i%2 ? '<div>tall column</div>' : '' %>
+            </div>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>

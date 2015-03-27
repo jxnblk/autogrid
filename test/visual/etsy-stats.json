@@ -1,6 +1,6 @@
 {
-  "selectors": 293,
-  "declarations": 162,
+  "selectors": 292,
+  "declarations": 160,
   "properties": [
     "marginLeft",
     "marginRight",
@@ -12,16 +12,14 @@
     "paddingRight",
     "minHeight",
     "float",
-    "width",
-    "containerWidth",
-    "gutterWidth"
+    "width"
   ],
   "mediaQueries": [
-    "(BreakpointSm)",
-    "(BreakpointMd)",
-    "(BreakpointLg)",
-    "(BreakpointXl)",
-    "(BreakpointTv)"
+    "(minWidth:480px)",
+    "(minWidth:720px)",
+    "(minWidth:960px)",
+    "(minWidth:1200px)",
+    "(minWidth:1600px)"
   ],
   "marginLeft": {
     "total": 67,
@@ -67,16 +65,8 @@
     "total": 72,
     "unique": 12
   },
-  "containerWidth": {
-    "total": 1,
-    "unique": 1
-  },
-  "gutterWidth": {
-    "total": 1,
-    "unique": 1
-  },
   "idSelectors": 0,
   "classSelectors": 292,
-  "pseudoClassSelectors": 1,
+  "pseudoClassSelectors": 0,
   "pseudoElementSelectors": 3
 }

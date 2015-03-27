@@ -6,6 +6,7 @@ var autogrid = require('..');
 var cssnext = require('cssnext');
 var cssstats = require('cssstats');
 var humanize = require('humanize-plus');
+var validate = require('css-validator');
 
 var options = require('./options');
 
@@ -26,6 +27,22 @@ describe('autogrid', function() {
 
   it('should create a string', function() {
     assert.equal(typeof stylesheets.defaults, 'string');
+  });
+
+  it('should create valid css', function(done) {
+    validate({ text: stylesheets.css3 }, function(err, data) {
+      if (err) throw err;
+      assert.equal(data.validity, true);
+      done();
+    });
+  });
+
+  it('should create valid css for inline-block mode', function(done) {
+    validate({ text: stylesheets.suitcss }, function(err, data) {
+      if (err) throw err;
+      assert.equal(data.validity, true);
+      done();
+    });
   });
 
   it('should compile with cssnext', function() {

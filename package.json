@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test",
-    "visual": "node test/visual/build"
+    "visual": "node test/visual/build",
+    "app:js": "webpack --progress --colors",
+    "app:html": "node app/build",
+    "watch:app": "webpack --progress --colors --watch & watch 'npm run app:html' ./app",
+    "serve": "http-server -p 8000",
+    "start": "npm run watch:app & npm run serve"
   },
   "keywords": [
     "CSS",
@@ -20,7 +25,14 @@
     "cssnext": "^1.1.0",
     "cssstats": "^1.4.0",
     "humanize-plus": "^1.5.0",
-    "mocha": "^2.2.1"
+    "json-loader": "^0.5.1",
+    "jsx-loader": "^0.12.2",
+    "mocha": "^2.2.1",
+    "react": "^0.13.1",
+    "react-html": "^1.0.2",
+    "static-react": "^2.0.0-beta7",
+    "watch": "^0.14.0",
+    "webpack": "^1.7.3"
   },
   "dependencies": {
     "lodash": "^3.6.0",

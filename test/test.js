@@ -3,6 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var assert = require('assert');
 var autogrid = require('..');
+var columnSelector = require('../lib/column-selector');
 var cssnext = require('cssnext');
 var cssstats = require('cssstats');
 var humanize = require('humanize-plus');
@@ -27,6 +28,15 @@ describe('autogrid', function() {
 
   it('should create a string', function() {
     assert.equal(typeof stylesheets.defaults, 'string');
+  });
+
+  it('should correctly parse column selector names', function() {
+    var selector = columnSelector({ prefix: '', columnName: 'BB-column-NN-MM' }, false, 6, false);
+    assert.equal(selector, '.column-6');
+    selector = columnSelector({ prefix: '', columnName: 'BB-column-NN--MM' }, false, 6, 'modifier');
+    assert.equal(selector, '.column-6--modifier');
+    selector = columnSelector({ prefix: '', columnName: 'BB_col-NN--MM' }, 'sm', 6, 'modifier');
+    assert.equal(selector, '.sm_col-6--modifier');
   });
 
   it('should create valid css', function(done) {

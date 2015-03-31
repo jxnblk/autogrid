@@ -14,7 +14,7 @@ var createColumnFlush = require('./lib/column-flush');
 
 module.exports = function(options) {
 
-  var options = options || {};
+  var options = _.clone(options) || {};
   options = _.defaults(options, defaults);
 
   var root = postcss.root({ after: '\n' });

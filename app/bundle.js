@@ -375,9 +375,9 @@ module.exports = function(options) {
 
 module.exports = function(options, breakpoint, number, modifier) {
 
-  var REMOVE_BB_REGEX = /\-BB|BB\-|BB/;
-  var REMOVE_NN_REGEX = /\-NN|NN\-|NN/;
-  var REMOVE_MM_REGEX = /\-MM|MM\-|MM/;
+  var REMOVE_BB_REGEX = /[\-\_]+BB|BB[\-\_]+|BB/;
+  var REMOVE_NN_REGEX = /[\-\_]+NN|NN[\-\_]+|NN/;
+  var REMOVE_MM_REGEX = /[\-\_]+MM|MM[\-\_]+|MM/;
 
   var BB_REGEX = /BB/;
   var NN_REGEX = /NN/;
@@ -51170,7 +51170,7 @@ module.exports = function(options) {
 },{"react":280}],282:[function(require,module,exports){
 module.exports={
   "name": "autogrid",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Automatic CSS grid generator",
   "main": "index.js",
   "scripts": {

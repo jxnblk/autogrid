@@ -11,7 +11,7 @@ module.exports = {
     npm: '//npmjs.com/package/' + pkg.name,
     version: pkg.version,
     stylesheets: [ 'http://d2v52k3cl9vedd.cloudfront.net/bassdock/1.2.1/bassdock.min.css' ],
-    scripts: [ 'app/bundle.js' ],
+    javascripts: [ 'app/bundle.js' ],
   },
   Root: Root
 };

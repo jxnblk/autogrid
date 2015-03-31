@@ -6,9 +6,11 @@
   "scripts": {
     "test": "mocha test",
     "visual": "node test/visual/build",
-    "app:js": "webpack --progress --colors",
     "app:html": "node app/build",
-    "watch:app": "webpack --progress --colors --watch & watch 'npm run app:html' ./app",
+    "app:js": "browserify app/entry.js -o app/bundle.js",
+    "watch:app": "watch 'npm run app:js & npm run app:html' ./app/components",
+    "xapp:js": "webpack --progress --colors",
+    "xwatch:app": "webpack --progress --colors --watch & watch 'npm run app:html' ./app",
     "serve": "http-server -p 8000",
     "start": "npm run watch:app & npm run serve"
   },
@@ -21,6 +23,8 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "devDependencies": {
+    "brfs": "^1.4.0",
+    "browserify": "^9.0.3",
     "css-validator": "^0.5.1",
     "cssnext": "^1.1.0",
     "cssstats": "^1.4.0",
@@ -30,6 +34,7 @@
     "mocha": "^2.2.1",
     "react": "^0.13.1",
     "react-html": "^1.0.2",
+    "reactify": "^1.1.0",
     "static-react": "^2.0.0-beta7",
     "watch": "^0.14.0",
     "webpack": "^1.7.3"
@@ -37,5 +42,11 @@
   "dependencies": {
     "lodash": "^3.6.0",
     "postcss": "^4.0.6"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "brfs"
+    ]
   }
 }

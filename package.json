@@ -1,6 +1,6 @@
 {
   "name": "autogrid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automatic CSS grid generator",
   "main": "index.js",
   "scripts": {

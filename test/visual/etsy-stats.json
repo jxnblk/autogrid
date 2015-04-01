@@ -1,6 +1,6 @@
 {
   "selectors": 292,
-  "declarations": 160,
+  "declarations": 165,
   "properties": [
     "marginLeft",
     "marginRight",
@@ -58,7 +58,7 @@
     "unique": 1
   },
   "float": {
-    "total": 1,
+    "total": 6,
     "unique": 1
   },
   "width": {

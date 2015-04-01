@@ -1,6 +1,6 @@
 {
   "selectors": 193,
-  "declarations": 107,
+  "declarations": 110,
   "properties": [
     "maxWidth",
     "marginLeft",
@@ -61,7 +61,7 @@
     "unique": 1
   },
   "float": {
-    "total": 1,
+    "total": 4,
     "unique": 1
   },
   "width": {

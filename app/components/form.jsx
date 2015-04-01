@@ -1,42 +1,62 @@
 
 var React = require('react');
+var Stepper = require('rebass-stepper');
+var NumberRange = require('rebass-number-range');
 
 var Form = React.createClass({
 
-  renderInput: function(item, i) {
-    var self = this;
-    function handleChange(e) {
-      console.log('handleChange');
-      var options = self.props.options;
-      var value = e.target.value;
-      options[item.key] = value;
-      self.props.updateOptions(options);
-    }
-    return (
-      <div key={'input-'+item.key}
-        className="sm-col-6 md-col-4 lg-col-3 px2 mb2">
-        <label className="h5 bold">{item.key}</label>
-        <input type={item.type}
-          value={item.value}
-          onChange={handleChange}
-          className="block full-width field-light" />
-      </div>
-    )
+  propTypes: {
+    updateOptions: React.PropTypes.func,
+    options: React.PropTypes.shape({
+      columns: React.PropTypes.number,
+      gutter: React.PropTypes.number,
+    }),
+  },
+
+  handleColumnsChange: function(n) {
+    var options = this.props.options;
+    options.columns = n;
+    this.props.updateOptions(options);
+  },
+
+  handleGutterChange: function(n) {
+    var options = this.props.options;
+    options.gutter = n;
+    this.props.updateOptions(options);
   },
 
   render: function() {
-    var self = this;
-    var inputs = Object.keys(this.props.options).map(function(key) {
-      return {
-        key: key,
-        value: self.props.options[key],
-        type: 'text',
-      }
-    });
-    console.log(inputs);
+    var handleSubmit = function(e) {
+      e.preventDefault();
+    };
+    var opts = this.props.options;
     return (
-      <form className="flex flex-wrap mxn2">
-        {inputs.map(this.renderInput)}
+      <form className="" onSubmit={handleSubmit}>
+        <div className="flex flex-wrap py2 mxn2">
+          <div className="md-col-4 px2">
+            <Stepper
+              id="columns-input"
+              name="columns"
+              label="Columns"
+              value={opts.columns}
+              min={2}
+              max={32}
+              step={2}
+              bar
+              onValueChange={this.handleColumnsChange} />
+          </div>
+          <div className="md-col-4 px2">
+            <NumberRange
+              id="gutter-input"
+              name="gutter"
+              label="Gutter"
+              value={opts.gutter}
+              min={0}
+              max={64}
+              onValueChange={this.handleGutterChange}
+              />
+          </div>
+        </div>
       </form>
     )
   }

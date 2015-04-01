@@ -3,6 +3,7 @@ var React = require('react');
 var autogrid = require('../..');
 var Form = require('./form.jsx');
 var Stats = require('./stats.jsx');
+var Grid = require('./grid.jsx');
 
 var Autogrid = React.createClass({
 
@@ -14,18 +15,18 @@ var Autogrid = React.createClass({
   getInitialState: function() {
     return {
       options: {
+        unit: 'px',
         columns: 12,
-        gutter: '16px',
-        container: '1024px',
+        gutter: 16, // convert to px
+        container: 1024, // convert to px
         row: true,
-        customMedia: false,
-        customProperties: false,
         breakpoints: [
         ],
         method: 'float',
         offset: false,
         prefix: '',
         containerName: 'container',
+        rowName: 'row',
         columnName: 'BB-col-NN-MM',
       }
     }
@@ -45,12 +46,22 @@ var Autogrid = React.createClass({
       method: options.method,
       columnName: options.columnName,
     };
-    var css = autogrid(opts);
+    var autogridOpts = {
+      container: opts.container + 'px',
+      gutter: opts.gutter + 'px',
+      columns: opts.columns,
+      method: opts.method,
+      customMedia: false,
+      customProperties: false,
+      breakpoints: [{}],
+    };
+    var css = autogrid(autogridOpts);
     return (
       <div className="flex-auto">
+        <Grid {...this.state} />
+        <Stats css={css} />
         <Form options={opts}
           updateOptions={this.updateOptions} />
-        <Stats css={css} />
         <pre style={{maxHeight:'40vh'}}>{css}</pre>
       </div>
     )

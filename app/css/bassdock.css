@@ -1,0 +1,88 @@
+/* Basscss.com Styles */
+
+@import "basscss-base-reset";
+@import 'basscss-base-forms';
+@import 'basscss-base-buttons';
+@import 'basscss-base-tables';
+@import "basscss-base-typography";
+
+@import 'basscss-ui-utility-button-sizes';
+
+@import 'basscss-utility-layout';
+@import 'basscss-utility-typography';
+@import 'basscss-utility-white-space';
+@import 'basscss-utility-responsive-states';
+@import 'basscss-positions';
+@import 'basscss-ui-utility-groups';
+
+/*
+@import 'basscss-utility-headings';
+*/
+
+/* @import 'basscss-grid'; */
+@import "flex-object";
+
+@import 'basscss-color-base';
+@import 'basscss-color-forms';
+@import 'basscss-color-forms-dark';
+@import 'basscss-input-range';
+@import 'basscss-progress';
+@import 'basscss-color-tables';
+
+@import 'basscss-button-outline';
+@import 'basscss-button-transparent';
+@import 'basscss-button-link';
+@import 'basscss-color-borders';
+@import 'basscss-background-images';
+@import "basscss-highlight";
+@import 'basscss-colors';
+
+@import "./base/icons";
+
+@import "./utility/positions";
+@import "./utility/layout";
+
+@import "./color/site";
+@import "./color/colors";
+@import "./color/animations";
+
+
+/* Custom Media Queries */
+@custom-media --breakpoint-sm (min-width: 36em);
+@custom-media --breakpoint-md (min-width: 52em);
+@custom-media --breakpoint-lg (min-width: 64em);
+
+
+@import "basscss-defaults";
+
+:root {
+
+  --font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --heading-font-weight: 600;
+  --bold-font-weight: 600;
+  --button-font-weight: 600;
+  --h0: 2.25rem;
+  --h4: 1.125rem;
+  --h5: .875rem;
+  --h6: .75rem;
+  --container-width: 76rem;
+  --heading-font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --button-font-size: .875rem;
+
+  --h0-responsive:  5vw;
+  --h0-responsive-max:  4.8rem;
+
+  --darken-1: rgba(#000, .03125);
+  --darken-2: rgba(#000, .0625);
+
+  --slate: #304650;
+  --bright-blue: #00b9ff;
+  --light-blue: rgba(var(--blue), .0625);
+
+  --border-color: var(--darken-3);
+  --hover-background-color: var(--light-blue);
+
+}
+
+
+
